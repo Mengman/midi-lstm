@@ -103,7 +103,7 @@ def batchify(data, batch_size):
     data = data.reshape((batch_size, num_batchs)).T
     return data
 
-corpus = None
+corpus = Corpus('')
 
 model_name = 'lstm'
 

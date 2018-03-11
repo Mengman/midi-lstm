@@ -42,8 +42,8 @@ def parse_midi(data_fn):
 
     corpus_notes = []
     for chord in chord_stream:
-        for note in chord:
-            corpus_notes.append(NoteInfo(note))
+        for n in chord:
+            corpus_notes.append(NoteInfo(n))
         
         # use C1 as a pause
         corpus_notes.append(NoteInfo(note.Note('C1')))

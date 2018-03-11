@@ -46,7 +46,7 @@ def parse_midi(data_fn):
             corpus_notes.append(NoteInfo(note))
         
         # use C1 as a pause
-        corpus_notes.append(note.Note('C1'))
+        corpus_notes.append(NoteInfo(note.Note('C1')))
     
     return corpus_notes
         

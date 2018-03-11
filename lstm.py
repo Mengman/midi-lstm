@@ -146,7 +146,7 @@ def detach(state):
 def model_eval(data_source):
     total_L = 0.0
     ntotal = 0
-    hidden = model.begin_state(fun=mx.nd.zeros, batch_size=batch_size, ctx=ctx)
+    hidden = model.begin_state(func=mx.nd.zeros, batch_size=batch_size, ctx=ctx)
 
     for i in range(0, data_source.shape[0] - 1, num_steps):
         data, target = get_batch(data_source, i)
@@ -161,7 +161,7 @@ def train():
     for epoch in range(epochs):
         total_L = 0.0
         start_time = time.time()
-        hidden = model.begin_state(fun = mx.nd.zeros, batch_size=batch_size, ctx=ctx)
+        hidden = model.begin_state(func=mx.nd.zeros, batch_size=batch_size, ctx=ctx)
         
         for ibatch, i in enumerate(range(0, train_data.shape[0] - 1, num_steps)):
             data, target = get_batch(train_data, i)

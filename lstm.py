@@ -122,7 +122,6 @@ vocab_size = len(corpus.dictionary)
 
 train_data = batchify(corpus.train, batch_size).as_in_context(ctx)
 val_data = batchify(corpus.valid, batch_size).as_in_context(ctx)
-test_data = batchify(corpus.test, batch_size).as_in_context(ctx)
 
 model = RNNModel(model_name, vocab_size, embed_dim, hidden_dim, num_layers, dropout_rate)
 
@@ -194,6 +193,4 @@ def train():
 
 
 train()
-test_L = model_eval(test_data)
-print('Test loss %.2f, test perplexity %.2f' % (test_L, math.exp(test_L)))
 
